@@ -17,6 +17,7 @@ class XylophoneApp extends StatelessWidget {
     ];
 
     return MaterialApp(
+      debugShowCheckedModeBanner: false,
       home: Scaffold(
         body: SafeArea(
           child: Column(
@@ -37,13 +38,10 @@ class XylophoneApp extends StatelessWidget {
   }
 
   Widget noteButton({required int num, required Color color}) {
-    return TextButton(
-      onPressed: () => playSound(num),
-      child: Container(
-        width: 300.0,
-        height: 40.0,
-        margin: EdgeInsets.all(3.0),
-        color: color,
+    return Expanded(
+      child: TextButton(
+        onPressed: () => playSound(num),
+        child: Container(color: color),
       ),
     );
   }
